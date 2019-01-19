@@ -1,9 +1,9 @@
-from keras.applications.mobilenet import MobileNet, decode_predictions
+from keras.applications.mobilenet import MobileNet, decode_predictions, preprocess_input
 from keras.applications.inception_resnet_v2 import InceptionResNetV2
 from keras.models import load_model
+from keras.preprocessing import image
 
 import numpy as np
-from PIL import Image
 
 import boto3
 from io import BytesIO
@@ -21,10 +21,11 @@ def lambda_handler(event, context):
     model = MobileNet()
 
     s3Img = obj['Body'].read()
-    img = np.asarray(Image.open(BytesIO(s3Img)))
-    
-    X = np.reshape(img, [1, 224, 224, 3])
+    img = image.load_img(BytesIO(s3Img), target_size=(224, 224))
+    img = image.img_to_array(img)
+    img = np.expand_dims(img, axis=0)
+    pImg = preprocess_input (img)
 
-    preds = model.predict(X)
+    preds = model.predict(pImg)
 
     print(decode_predictions(preds, top=5)[0])
