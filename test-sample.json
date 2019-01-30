@@ -1,0 +1,38 @@
+{
+    "Records": [
+        {
+            "eventVersion": "2.1",
+            "eventSource": "aws:s3",
+            "awsRegion": "us-east-1",
+            "eventTime": "2019-01-24T12:43:08.904Z",
+            "eventName": "ObjectCreated:Put",
+            "userIdentity": {
+                "principalId": "XXXXXXXXXXX"
+            },
+            "requestParameters": {
+                "sourceIPAddress": "193.48.18.43"
+            },
+            "responseElements": {
+                "x-amz-request-id": "E63ACB13E44013D1",
+                "x-amz-id-2": "xxxxxxxxxxxxxxxxxxxxxxxxxxx"
+            },
+            "s3": {
+                "s3SchemaVersion": "1.0",
+                "configurationId": "xxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                "bucket": {
+                    "name": "serverless-training-img",
+                    "ownerIdentity": {
+                        "principalId": "XXXXXXXXXXX"
+                    },
+                    "arn": "arn:aws:s3:::serverless-training-img"
+                },
+                "object": {
+                    "key": "golden-retriever-puppy.jpg",
+                    "size": 41880,
+                    "eTag": "b88fa6ddc8e5f5fa21dc7f13cfae46ec",
+                    "sequencer": "005C49B2DCCFA4F9B2"
+                }
+            }
+        }
+    ]
+}

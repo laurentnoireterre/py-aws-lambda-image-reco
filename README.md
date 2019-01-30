@@ -1,7 +1,7 @@
 # Description
 
 Simple python program to experiment image recognition using Keras machine learning framework and Tensorflow.
-This has to be deployed within a AWS Lambda function.
+This has to be deployed within a AWS Lambda function. The function posts the result in an SNS topic.
 
 # Packaging
 
@@ -30,7 +30,10 @@ Resource: *
    - Layers:
      - Add the Tensorflow-Kera-Pillow layer using this ARN `arn:aws:lambda:us-east-1:347034527139:layer:tf_keras_pillow:3` 
         (see details https://github.com/antonpaquin/Tensorflow-Lambda-Layer)
+   - Environment variables: 
+     - Add an environment variable named `snsTopicArn` and containing the SNS topic ARN where to post the recognition result
 
 Deploy the function code by uploading the zip package.
 
 To trigger the function, just upload an image in the S3 bucket configured within the function
+You can use the `test-sample.json`file to test the function.
