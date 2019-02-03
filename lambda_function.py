@@ -12,6 +12,7 @@ import os
 
 s3 = boto3.client('s3')
 sns = boto3.client('sns')
+model = MobileNet()
 
 def lambda_handler(event, context):
 
@@ -21,8 +22,6 @@ def lambda_handler(event, context):
         
         print('Reading {} from S3 bucket {}'.format(file_key, bucket_name))
         obj = s3.get_object(Bucket=bucket_name, Key=file_key)
-        
-        model = MobileNet()
 
         s3Img = obj['Body'].read()
         img = image.load_img(BytesIO(s3Img), target_size=(224, 224))
