@@ -13,24 +13,24 @@
                 "sourceIPAddress": "193.48.18.43"
             },
             "responseElements": {
-                "x-amz-request-id": "E63ACB13E44013D1",
+                "x-amz-request-id": "E63AC13D1",
                 "x-amz-id-2": "xxxxxxxxxxxxxxxxxxxxxxxxxxx"
             },
             "s3": {
                 "s3SchemaVersion": "1.0",
                 "configurationId": "xxxxxxxxxxxxxxxxxxxxxxxxxxx",
                 "bucket": {
-                    "name": "serverless-training-img",
+                    "name": "<YOUR_BUCKET_NAME>",
                     "ownerIdentity": {
                         "principalId": "XXXXXXXXXXX"
                     },
-                    "arn": "arn:aws:s3:::serverless-training-img"
+                    "arn": "arn:aws:s3:::bucket_name"
                 },
                 "object": {
-                    "key": "golden-retriever-puppy.jpg",
+                    "key": "<YOUR_BUCKET_TEST_IMAGE>",
                     "size": 41880,
-                    "eTag": "b88fa6ddc8e5f5fa21dc7f13cfae46ec",
-                    "sequencer": "005C49B2DCCFA4F9B2"
+                    "eTag": "b88fa6ddc8efae46ec",
+                    "sequencer": "0FA4F9B2"
                 }
             }
         }
